@@ -2,12 +2,15 @@ import { Router } from 'express'
 
 import * as noteService from '../../services/notes'
 import logger from '../../helpers/logger'
+import auth from '../../helpers/auth'
 
 const router = Router()
 
+router.use(auth.authenticate('local', { session: false }))
+
 router.get('/', async (req, res) => {
   const notes = await noteService.getAll()
-  await res.send(notes)
+  res.send(notes)
 })
 
 router.post('/', async (req, res) => {
