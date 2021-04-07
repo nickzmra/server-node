@@ -12,7 +12,7 @@ MORGAN_LOG=
 ORIGIN=
 
 #DB Connection
-DBTYPE=
+DB_TYPE=
 DB_FILE=
 
 #API Credentials
