@@ -3,8 +3,8 @@ import logger from '../helpers/logger'
 import db from '../helpers/db'
 
 const noteSchema = Joi.object({
-  title: Joi.string().required().min(3).max(25),
-  content: Joi.string().required().min(5).max(250),
+  title: Joi.string().required().min(3).max(20),
+  content: Joi.string().required().min(5).max(30),
 })
 
 export const getAll = async () => {
